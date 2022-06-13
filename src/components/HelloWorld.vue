@@ -3,7 +3,7 @@ import { inject, ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
-const $axios = inject('$axios')
+const { $axios } = inject('plugins')
 
 const { data } = await $axios.get('https://jsonplaceholder.typicode.com/todos/1')
 
