@@ -13,6 +13,9 @@
         <slot name="append" />
       </div>
     </header>
+    <main class="page__content">
+      <slot />
+    </main>
     <footer class="page__footer">
       <slot name="footer" />
     </footer>
@@ -23,11 +26,33 @@
 .page {
   display: flex;
   flex-direction: column;
+  height: 100%;
   position: absolute;
   left: 0;
   right: 0;
   background-color: aqua;
   padding: 0;
   padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+
+  &__header {
+    color: #fff;
+    background-color: red;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  &__content {
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 }
 </style>
