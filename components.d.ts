@@ -6,6 +6,8 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CodeCard: typeof import('./src/components/CodeCard.vue')['default']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElImage: typeof import('element-plus/es')['ElImage']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElSelect: typeof import('element-plus/es')['ElSelect']
