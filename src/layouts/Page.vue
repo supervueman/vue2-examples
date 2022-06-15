@@ -23,6 +23,8 @@
 </template>
 
 <style lang="scss">
+@import '@/assets/styles/_variables.scss';
+
 .page {
   display: flex;
   flex-direction: column;
@@ -41,13 +43,14 @@
     height: 50px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 $spacing-m;
   }
 
   &__content {
     flex-grow: 1;
     overflow-x: hidden;
     overflow-y: auto;
+    padding: 0 $spacing-m;
   }
 
   &__footer {
