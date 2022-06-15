@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import Page from '@/layouts/Page.vue'
 import { $ref } from 'vue/macros';
-import { ref } from 'vue'
+import { useCodeStore } from '../stores'
+
+//* Components
+import CodeCard from '@/components/CodeCard.vue'
+
+const codeStore = useCodeStore()
+
+codeStore.fetchCodes()
 
 const searchQuery = $ref('')
 const categoryQuery = $ref('')
@@ -31,6 +38,10 @@ const remoteSearch = () => {}
           :value="item.value"
         />
       </el-select>
+
+      <div class="content">
+        <CodeCard v-for="({ title, image }, index) in codeStore.codes" />
+      </div>
     </div>
     <template #footer>Footer</template>
   </Page>
