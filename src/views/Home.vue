@@ -40,7 +40,11 @@ const remoteSearch = () => {}
       </el-select>
 
       <div class="content">
-        <CodeCard v-for="({ title, image }, index) in codeStore.codes" />
+        <CodeCard
+          v-for="({ title, image }, index) in codeStore.codes"
+          :title="title"
+          :image="image"
+        />
       </div>
     </div>
     <template #footer>Footer</template>
